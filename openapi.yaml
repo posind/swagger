@@ -16,7 +16,7 @@ externalDocs:
   description: Repo GCF
   url: https://petapedia.github.io/gcf/
 servers:
-  - url: https://asia-southeast2-awangga.cloudfunctions.net
+  - url: https://asia-southeast2-civil-epigram-429004-t8.cloudfunctions.net/webhook
 tags:
   - name: data
     description: Data Geo Spasial
