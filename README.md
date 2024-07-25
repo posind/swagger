@@ -17,7 +17,7 @@ NB : Jika tidak suka dengan YAML bisa diganti dengan JSON
 
 contoh model struct yang akan digunakan untuk mengakses collection di database MongoDB
 package model
-
+``` js
 import (
 	"go.mongodb.org/mongo-driver/bson/primitive"
 )
@@ -27,7 +27,7 @@ type ProhibitedItem_en struct {
 	Destinasi      string              `bson:"Destinasi" json:"Destinasi"`
 	BrangTerlarang string              `bson:"Barang Terlarang" json:"Barang Terlarang"`
 }
-
+```
 NB: Kalian bisa mengganti nama type "prohibiteditem_en" nya sesuai dengan nama yang kalian inginkan.
 
 # endpoint login & register
