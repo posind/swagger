@@ -99,6 +99,61 @@ paths:
         - token:
             - write:apiKey
             - read:apiKey
+  /petapedia-create:
+    post:
+      tags:
+        - data
+      summary: Create New Data
+      description: Add new geospatial data
+      operationId: createGeoData
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Peta'
+      responses:
+        '201':
+          description: Data created successfully
+        '400':
+          description: Invalid input
+  /petapedia-update:
+    put:
+      tags:
+        - data
+      summary: Update Geospatial Data
+      description: Update existing geospatial data
+      operationId: updateGeoData
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Peta'
+      responses:
+        '200':
+          description: Data updated successfully
+        '400':
+          description: Invalid input
+  /petapedia-delete:
+    delete:
+      tags:
+        - data
+      summary: Delete Geospatial Data
+      description: Remove existing geospatial data
+      operationId: deleteGeoData
+      parameters:
+        - name: id
+          in: query
+          required: true
+          schema:
+            type: string
+          description: ID of the data to delete
+      responses:
+        '200':
+          description: Data deleted successfully
+        '400':
+          description: Invalid ID supplied
 components:
   schemas:
     Peta:
@@ -113,6 +168,8 @@ components:
               type: string
             coordinates: 
               type: array
+              items:
+                type: number
         properties:
           type: object
           properties:
@@ -131,7 +188,7 @@ components:
       type: object
       properties:
         status:
-          type: bool
+          type: boolean
           example: false
         message:
           type: string
